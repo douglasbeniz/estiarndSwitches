@@ -1,0 +1,28 @@
+################################################################
+# Initialization records from file
+################################################################
+##
+## Monitor Beckhoff PLC variables "bLimitFree" and "bLimitColl"
+##
+
+record(bi,    "$(P):Limit_Free") {
+   field(TPRO, "1")
+   field(DESC, "ESTIA-RND Beckhoff bLimitFree")
+   field(DTYP, "Soft Channel")
+   field(ZNAM, "0")
+   field(ONAM, "1")
+   field(VAL,  "0")
+   field(PINI, "YES")
+   field(INP,  "@estiarndSwitches.proto getLIMITFREE $(PORT) $(ADDR)")
+}
+
+record(bi,    "$(P):Limit_Coll") {
+   field(TPRO, "1")
+   field(DESC, "ESTIA-RND Beckhoff bLimitColl")
+   field(DTYP, "Soft Channel")
+   field(ZNAM, "0")
+   field(ONAM, "1")
+   field(VAL,  "0")
+   field(PINI, "YES")
+   field(INP,  "@estiarndSwitches.proto getLIMITCOLL $(PORT) $(ADDR)")
+}

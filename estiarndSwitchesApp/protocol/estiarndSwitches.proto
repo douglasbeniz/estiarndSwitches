@@ -1,0 +1,32 @@
+##################################################
+#
+# Protocol File
+#
+# Protocol file for ESTIA-RND switches at Beckhoff PLC
+# European Spallation Source ERIC
+#
+# 
+# This protocol file is to create extra access
+##################################################
+
+
+##################################################
+# General Settings
+##################################################
+
+Terminator = "\r\n";
+ReplyTimeout = 2000;
+
+
+###################################################
+# Get functions
+###################################################
+getLIMITFREE {
+   out "ADSPORT=852/Main.XXX.bLimitFree?";
+   in "%s";
+}
+
+getLIMITCOLL {
+   out "ADSPORT=852/Main.XXX.bLimitColl?";
+   in "%s";
+}
